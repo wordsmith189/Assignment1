@@ -1,0 +1,171 @@
+---
+title: "Problem Set 1"
+output: html_notebook
+---
+
+This problem set covers concepts from chapters 2.2-2.5 in *Humanities Data in R*, including:
+
+* Calculator 
+* Objects
+* Numeric Vectors
+* Logical Vectors
+* Subsetting
+
+As well as these concepts not covered in the book:
+
+* Getting user input
+* If statements
+
+# Writing Code
+For each of the following questions, write the code you need to solve the problem in the provided code block. Running each code block should result in a returned value-- either the result of a calcuation, or the printing of a variable. 
+
+For example, rather than writing:
+```{r}
+x <- 1
+```
+you should write:
+```{r}
+x <- 1
+x
+```
+Notice the difference between running these two code blocks.
+
+Before submitting, be sure to run your code to make sure it is correct!
+
+### Problems
+1. Return the sum of all the numbers 1-100
+```{r}
+
+```
+
+2. Create a variable called `x` and assign it any value between 1 and 10. Return the class of x.
+```{r}
+
+```
+
+3. Multiply `x` by 2, and assign that new value to a variable called `y`.
+```{r}
+
+```
+
+4. Check if the value of x is equal to the value of y.
+```{r}
+
+```
+
+5. There is an operator in computing called "modulo" which tells you what the remainder is when a number is divided by the other. For example, 7 modulo 3 is 1, because 7/3 is 2 remainder 1. In R, we would write this as `7 %% 3`. Using the modulo operator, expand on the code provided to ask the user for a number, then returning "Your number is even!" if the number is even, or "Your number is odd!" if the number is odd. Refer back to the lab for help!
+```{r}
+ask <- function(){
+  num <- readline("Enter a number: ")
+  num <-  as.numeric(num)
+  
+  if(#your code here){
+    print("Your number is even!")
+  } else {
+    print("Your number is odd!")
+  }
+
+}
+ask()
+```
+
+
+#### Avengers Tenure
+The following problems use a small subset of a dataset compiled by Five Thirty Eight on deaths in the Marvel universe's Avengers. You can access the full dataset [here](https://data.world/fivethirtyeight/avengers) and the article it was used for [here](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/).
+
+
+| Alias            | Appearances | Year joined | Full member? | Died | Returned | 
+|------------------|-------------|-------------|--------------|------|----------| 
+| She-Hulk         | 55          | 1982        | No           | No   |  N/A     | 
+| Agent Anti-Venom | 746         | 2012        | No           | No   |  N/A     | 
+| The Wasp         | 1165        | 1963        | Yes          | Yes  | Yes      | 
+| Storm            | 1598        | 2012        | Yes          | No   |  N/A     | 
+| The Hulk         | 2089        | 1963        | Yes          | Yes  | Yes      | 
+| Thor             | 2402        | 1963        | Yes          | Yes  | Yes      | 
+| Iron Man         | 3068        | 1963        | Yes          | Yes  | Yes      | 
+| Wolverine        | 3130        | 2005        | Yes          | Yes  | No       | 
+| Spider-Man       | 4333        | 1990        | Yes          | Yes  | Yes      | 
+
+6. How many years has it been since Wolverine joined the Avengers?
+```{r}
+
+```
+
+7. How much longer has Spider-Man been an Avenger than Storm?
+```{r}
+
+```
+
+8. On average, how many appearances has The Hulk made per year?
+```{r}
+
+```
+
+9. Create a vector called `yearJoined` containing the year each character joined (in order of the table above).
+```{r}
+
+```
+
+10. Using your `yearJoined` vector, calculate the number of years each character has been an Avenger, assuming all are currently still members. Save this new vector as `membershipLength`
+```{r}
+
+```
+
+11. Create two logical vectors: one for whether the characters have died, and one for whether they have returned. Call them `died` and `returned`, respectively. Note: N/A fields should be counted as `FALSE`
+```{r}
+
+```
+
+12. Using logical operators on the `died` and `returned` vectors, create a new logical vector called `stillAlive` that is `TRUE` for every character that is still alive (either never died or died and returned), and `FALSE` for everyone else.
+
+```{r}
+
+```
+
+13. Using your `stillAlive` vector, return the total number of characters that are still alive.
+```{r}
+
+```
+
+124. Death in comic books is a little wishy-washy, but let's say Wolverine's definitive death was in the 2014 "Death of Wolverine" storyline. Adjust Wolverine's entry in the `membershipLength` vector to account for his death. You should update only Wolverine's place in the existing vector; do not create a new vector or manually rewrite the entire existing one.
+
+```{r}
+
+```
+
+15. Expand on the following code to ask the user to pick a character from a numbered list (provided) and tell them whether that character is still alive. Use your existing vectors to help with this! Note: cat is another way of printing to the console-- it allows you to do linebreaks with \n.
+```{r}
+ask <- function(){
+  cat("1. She-Hulk\n2. Agent Anti-Venom\n 3. The Wasp\n 4. Storm\n 5. The Hulk\n 6. Thor\n 7. Iron Man\n 8. Wolverine\n 9. Spider-Man
+")
+  
+  
+  #Ask the user to pick a number. Remember to cast their input as.numeric!
+
+  
+  #Return whether the character with that number is alive or dead.
+  
+  
+}
+  
+ask()
+```
+
+# Understanding Code
+For each of the following questions, explain what's happening in the code provided *without* adding anything to the code. Answer all parts of the question.
+
+16. Consider the following:
+```{r}
+logicalVector <- c(TRUE, FALSE, FALSE, TRUE, TRUE)
+mysteryVector <- logicalVector + 3
+mysteryVector
+```
+What is the class of mysteryVector? Why? How are boolean values treated when used for math? Why does mysteryVector have the values it does?
+
+17. Consider the following:
+```{r}
+vectorOne <- c(1:6)
+vectorTwo <- c(1:3)
+vectorOne + vectorTwo
+```
+Run the cell to see the result. Explain how addition of vectors of different lengths works. What terms are being added with which here? What would happen if vectorOne were only numbers 1-5?

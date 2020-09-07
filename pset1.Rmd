@@ -15,9 +15,10 @@ This problem set covers concepts from chapters 2.2-2.5 in *Humanities Data in R*
 As well as these concepts not covered in the book:
 
 * Getting user input
-* If statements
+* `If` statements
 
 # Writing Code
+
 For each of the following questions, write the code you need to solve the problem in the provided code block. Running each code block should result in a returned value-- either the result of a calcuation, or the printing of a variable. 
 
 For example, rather than writing:
@@ -25,12 +26,14 @@ For example, rather than writing:
 ```{r}
 x <- 1
 ```
+
 you should write:
 
 ```{r}
 x <- 1
 x
 ```
+
 Notice the difference between running these two code blocks.
 
 Before submitting, be sure to run your code to make sure it is correct!
@@ -42,7 +45,7 @@ Before submitting, be sure to run your code to make sure it is correct!
 
 ```
 
-2. Create a variable called `x` and assign it any value between 1 and 10. Return the class of x.
+2. Create a variable called `x` and assign it any value between 1 and 10. Return the class of `x`.
 
 ```{r}
 
